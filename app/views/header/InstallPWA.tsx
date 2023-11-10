@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import DownloadIcon from '@mui/icons-material/Download';
 import { IconButton, Tooltip } from '@mui/material';
-import { isMobile } from '@/app/utils/browserUtils';
 
 export default function InstallPWA() {
   const [installed, setInstalled] = useState(false);
@@ -21,6 +20,18 @@ export default function InstallPWA() {
     if (window.matchMedia('(display-mode: standalone)').matches)
       setInstalled(true);
   }, []);
+
+  const isMobile = () => {
+    const ua = navigator.userAgent;
+
+    if (/android/i.test(ua))
+      return true;
+
+    else if (/iPad|iPhone|iPod/.test(ua))
+      return true;
+
+    return false;
+  };
 
   const handleInstall = async () => {
     if (installed)

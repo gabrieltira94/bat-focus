@@ -1,9 +1,8 @@
 'use client';
 
 import { StyledSoundItem } from "@/app/styling/StyledSoundItem";
-import { isMobile } from "@/app/utils/browserUtils";
 import { Sound } from "@/app/views/sounds/sound.dto";
-import { Box, Grid, Grow, Slider, Tooltip, useTheme } from "@mui/material";
+import { Box, Grid, Grow, Slider, Tooltip } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -13,7 +12,6 @@ interface Props {
 
 export default function SoundItem(props: Props) {
   const { sound: { name, track, icon } } = props;
-  const { palette } = useTheme();
   const [volume, setVolume] = useState(1);
   const [isActive, setIsActive] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
@@ -31,6 +29,18 @@ export default function SoundItem(props: Props) {
     else
       audio?.pause();
   }, [isActive]);
+
+  const isMobile = () => {
+    const ua = navigator.userAgent;
+
+    if (/android/i.test(ua))
+      return true;
+
+    else if (/iPad|iPhone|iPod/.test(ua))
+      return true;
+
+    return false;
+  };
 
   const handleChange = (event: Event, value: number | number[]) => {
     if (audio)
