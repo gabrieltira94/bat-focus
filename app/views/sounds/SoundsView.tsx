@@ -1,12 +1,14 @@
 import { sounds } from "@/app/utils/data";
-import SoundItem from "@/app/views/sounds/SoundItem";
 import { Grid } from "@mui/material";
+import dynamic from "next/dynamic";
+
+const NoSSRSoundItem = dynamic(() => import('@/app/views/sounds/SoundItem'), { ssr: false });
 
 export default function SoundsView() {
   return (
     <Grid container>
       {sounds.map((sound, index) =>
-        <SoundItem key={index} sound={sound} />
+        <NoSSRSoundItem key={index} sound={sound} />
       )}
     </Grid>
   );

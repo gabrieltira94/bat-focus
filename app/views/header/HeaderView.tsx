@@ -1,9 +1,11 @@
 'use client';
 
 import About from "@/app/views/header/About";
-import InstallPWA from "@/app/views/header/InstallPWA";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+
+const NoSSRInstallPWA = dynamic(() => import('@/app/views/header/InstallPWA'), { ssr: false });
 
 export default function HeaderView() {
   const { breakpoints, palette } = useTheme();
@@ -33,7 +35,7 @@ export default function HeaderView() {
       </Box>
 
       <Box display='flex'>
-        <InstallPWA />
+        <NoSSRInstallPWA />
         <About />
       </Box>
     </Box>
