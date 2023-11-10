@@ -1,4 +1,3 @@
-import { isMobile } from "@/app/utils/browserUtils";
 import { Box, BoxProps, keyframes, styled } from "@mui/material";
 
 const effect = keyframes`
@@ -15,7 +14,6 @@ const effect = keyframes`
 
 export const StyledSoundItem = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
-  cursor: isMobile() ? 'none' : 'pointer',
   '&.active': {
     img: {
       px: 2,

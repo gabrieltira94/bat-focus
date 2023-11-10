@@ -60,6 +60,7 @@ export default function SoundItem(props: Props) {
       <StyledSoundItem
         onClick={() => setIsActive(!isActive)}
         className={isActive ? 'active' : undefined}
+        sx={{ cursor: isMobile() ? 'none' : 'pointer' }}
       >
         <Tooltip title={name}>
           <Image
