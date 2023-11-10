@@ -1,0 +1,42 @@
+{
+  "theme_color": "#A85CFF",
+  "background_color": "rgb(0, 0 ,0)",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Bat Focus",
+  "id": "",
+  "short_name": "bat_focus",
+  "description": "Feel life through your ears",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "form_factor": "narrow",
+      "label": "Bat Focus",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Bat Focus"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Bat Focus"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Bat Focus"
+    }
+  ]
+}
