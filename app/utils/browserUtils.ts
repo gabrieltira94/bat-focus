@@ -1,3 +1,5 @@
+'use client';
+
 export const isMobile = () => {
   const ua = navigator.userAgent;
 
