@@ -21,7 +21,7 @@ export const theme = createTheme({
     },
     background: {
       default: 'rgb(0,0,0)',
-      active: alpha('#5CF64A', 0.15),
+      active: alpha('#A85CFF', 0.65),
       modal: 'rgba(48, 47, 43, 0.95)',
     },
     text: {

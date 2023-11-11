@@ -16,7 +16,7 @@ export const StyledSoundItem = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   '&.active': {
     img: {
-      px: 2,
+      padding: 15,
       animation: `${effect} 1s ease`
     },
     backgroundColor: theme.palette.background.active,
